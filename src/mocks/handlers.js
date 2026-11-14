@@ -5,6 +5,9 @@ import { mockTests } from "@/mocks/data/tests";
 const isEmptyMock = () =>
   new URLSearchParams(window.location.search).get("mock") === "empty";
 
+// 백엔드 공통 응답 형식 { success, message, data }
+const ok = (data) => HttpResponse.json({ success: true, message: null, data });
+
 export const handlers = [
-  http.get("/api/tests", () => HttpResponse.json(isEmptyMock() ? [] : mockTests)),
+  http.get("/api/tests/", () => ok(isEmptyMock() ? [] : mockTests)),
 ];

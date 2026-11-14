@@ -8,10 +8,10 @@ const view = (overrides) =>
 describe("getTestListView", () => {
   it("전체: 최신순 5개씩, 2페이지", () => {
     const result = view();
-    expect(result.counts).toEqual({ ALL: 7, RUNNING: 1, DRAFT: 1, COMPLETED: 5 });
-    expect(result.rows.map((t) => t.id)).toEqual(["t_001", "t_002", "t_003", "t_004", "t_005"]);
+    expect(result.counts).toEqual({ ALL: 9, RUNNING: 2, DRAFT: 2, COMPLETED: 5 });
+    expect(result.rows.map((t) => t.test_id)).toEqual([1, 2, 9, 8, 3]);
     expect(result.totalPages).toBe(2);
-    expect(view({ page: 2 }).rows).toHaveLength(2);
+    expect(view({ page: 2 }).rows).toHaveLength(4);
   });
 
   it("탭 숫자는 검색 결과 기준", () => {

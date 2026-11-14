@@ -3,12 +3,13 @@ import { TEST_FILTER, TEST_STATUS } from "@/domain/testStatus";
 export const PAGE_SIZE = 5;
 
 function matchesQuery(test, query) {
-  return test.name.toLowerCase().includes(query.toLowerCase());
+  // menu_name은 작성 중(DRAFT)이면 null일 수 있음
+  return (test.menu_name ?? "").toLowerCase().includes(query.toLowerCase());
 }
 
 function sortByLatest(tests) {
   return [...tests].sort(
-    (a, b) => new Date(b.updatedAt) - new Date(a.updatedAt),
+    (a, b) => new Date(b.updated_at) - new Date(a.updated_at),
   );
 }
 
