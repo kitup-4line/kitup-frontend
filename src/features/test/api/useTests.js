@@ -5,6 +5,6 @@ import { queryKeys } from "@/shared/api/queryKeys";
 export default function useTests() {
   return useQuery({
     queryKey: queryKeys.tests.all,
-    queryFn: () => apiClient("/tests"),
+    queryFn: () => apiClient("/tests/"),
   });
 }

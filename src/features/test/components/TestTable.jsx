@@ -38,7 +38,7 @@ export default function TestTable({
           </thead>
           <tbody>
             {rows.length > 0 ? (
-              rows.map((test) => <TestTableRow key={test.id} test={test} />)
+              rows.map((test) => <TestTableRow key={test.test_id} test={test} />)
             ) : (
               <tr>
                 <EmptyCell colSpan={COLUMNS.length}>

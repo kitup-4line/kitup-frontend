@@ -12,39 +12,48 @@ import store_icon from "@/images/TestList/store_icon.svg";
 import calendar_icon from "@/images/TestList/calendar_icon.svg";
 
 export default function TestTableRow({ test }) {
-  const { id, name, status, storeName, startDate, endDate, updatedAt } = test;
+  const {
+    test_id,
+    menu_name,
+    status,
+    kitchen_name,
+    started_at,
+    ended_at,
+    updated_at,
+  } = test;
   const { actionLabel, getPath } = STATUS_META[status];
-  const hasPeriod = Boolean(startDate && endDate);
+  const hasPeriod = Boolean(started_at && ended_at);
+  const displayName = menu_name ?? "메뉴명 미입력";
 
   return (
     <tr>
-      <NameCell title={name}>{name}</NameCell>
+      <NameCell title={displayName}>{displayName}</NameCell>
 
       <StatusCell>
         <StatusBadge status={status} />
       </StatusCell>
 
       <Cell>
-        <InfoLine $muted={!storeName}>
+        <InfoLine $muted={!kitchen_name}>
           <IconBox>
             <img src={store_icon} alt="" aria-hidden="true" />
           </IconBox>
-          {storeName ?? "매장 미지정"}
+          {kitchen_name ?? "매장 미지정"}
         </InfoLine>
         <InfoLine $muted>
           <IconBox>
             <img src={calendar_icon} alt="" aria-hidden="true" />
           </IconBox>
-          {hasPeriod ? formatPeriod(startDate, endDate) : "운영 기간 미설정"}
+          {hasPeriod ? formatPeriod(started_at, ended_at) : "운영 기간 미설정"}
         </InfoLine>
       </Cell>
 
       <Cell>
-        {status === TEST_STATUS.RUNNING && endDate ? (
-          <DDayBadge>{formatDDay(getDaysLeft(endDate))}</DDayBadge>
+        {status === TEST_STATUS.RUNNING && ended_at ? (
+          <DDayBadge>{formatDDay(getDaysLeft(ended_at))}</DDayBadge>
         ) : (
           <>
-            <DateText>{formatDate(updatedAt)}</DateText>
+            <DateText>{formatDate(updated_at)}</DateText>
             <DateText $muted>
               {status === TEST_STATUS.COMPLETED ? "테스트 종료" : "최근 수정"}
             </DateText>
@@ -53,7 +62,7 @@ export default function TestTableRow({ test }) {
       </Cell>
 
       <ActionCell>
-        <ActionLink to={getPath(id)} $status={status}>
+        <ActionLink to={getPath(test_id)} $status={status}>
           {actionLabel}&nbsp;&nbsp;→
         </ActionLink>
       </ActionCell>

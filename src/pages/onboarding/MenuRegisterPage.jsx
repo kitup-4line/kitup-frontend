@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import useCreateTest from "@/features/test/api/useCreateTest";
 import OnboardingHeader from "@/features/cost/components/OnboardingHeader";
 import MenuBasicForm from "@/features/cost/components/MenuBasicForm";
 import CostMethodSelector from "@/features/cost/components/CostMethodSelector";
@@ -9,7 +10,28 @@ import "@/features/cost/components/IngredientRowList";
 
 function MenuRegisterPage() {
   const navigate = useNavigate();
+  const { testId } = useParams();
   const [selectedMethod, setSelectedMethod] = useState("recipe");
+  const { mutate: createTest, isPending } = useCreateTest();
+
+  const goNext = (id) => {
+    const step = selectedMethod === "recipe" ? "recipe" : "ai";
+    navigate(`/tests/${id}/onboarding/${step}`);
+  };
+
+  const handleNext = () => {
+    // 이미 초안이 있으면(/tests/:testId/onboarding/menu) 바로 다음 단계로
+    if (testId) {
+      goNext(testId);
+      return;
+    }
+    // /tests/new: 빈 초안을 만들고, 받은 test_id로 이동
+    // TODO: PATCH 연결 후 메뉴명·판매가 저장을 여기서 이어서 호출
+    createTest(undefined, {
+      onSuccess: (test) => goNext(test.test_id),
+      onError: (error) => alert(error.message),
+    });
+  };
 
   return (
     <div className="MenuRegister_wrap">
@@ -29,14 +51,10 @@ function MenuRegisterPage() {
         </div>
       </div>
       <button
+        type="button"
         className="menuregister_bot"
-        onClick={() =>
-          navigate(
-            selectedMethod === "recipe"
-              ? "/tests/1/onboarding/recipe"
-              : "/tests/1/onboarding/ai",
-          )
-        }
+        onClick={handleNext}
+        disabled={isPending}
       >
         {selectedMethod === "recipe"
           ? "계속 (레시피 입력)"
