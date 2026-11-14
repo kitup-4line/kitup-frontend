@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
+import { getTestDefaults } from "@/features/cost/api/menuTests";
 import OnboardingHeader from "@/features/cost/components/OnboardingHeader";
 import IngredientRowList from "@/features/cost/components/IngredientRowList";
 import DeleteModal from "@/features/cost/components/DeleteModal";
@@ -12,6 +13,40 @@ function RecipeInputPage() {
   const navigate = useNavigate();
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [ingredients, setIngredients] = useState([]);
+  const [ingredientUnitOptions, setIngredientUnitOptions] = useState([]);
+  const [defaultsError, setDefaultsError] = useState("");
+
+  useEffect(() => {
+    let active = true;
+
+    const fetchDefaults = async () => {
+      try {
+        const result = await getTestDefaults();
+
+        if (!active) return;
+
+        setIngredientUnitOptions(result.data.ingredient_unit_options);
+      } catch (err) {
+        if (active) {
+          setDefaultsError(err.message || "재료 단위를 불러오지 못했습니다.");
+        }
+      }
+    };
+
+    fetchDefaults();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const handleIngredientChange = (id, field, value) => {
+    setIngredients((prev) =>
+      prev.map((ingredient) =>
+        ingredient.id === id ? { ...ingredient, [field]: value } : ingredient,
+      ),
+    );
+  };
 
   return (
     <div className="RecipeInputPage_wrap">
@@ -21,6 +56,7 @@ function RecipeInputPage() {
           description="사용한 재료를 한 항목씩 입력하세요. 수량과 단가를 정확히 입력할수록 식재료비와 공헌이익이 정밀해집니다."
         />
       </div>
+      {defaultsError && <p role="alert">{defaultsError}</p>}
 
       <div className="recipeinputpage_main">
         <div className="r_m_top">
@@ -41,10 +77,15 @@ function RecipeInputPage() {
             <p>삭제</p>
           </div>
           <div className="r_m_m_mid">
-            {ingredients.map((id) => (
+            {ingredients.map((ingredient) => (
               <IngredientRowList
-                key={id}
-                onDelete={() => setDeleteTarget(id)}
+                key={ingredient.id}
+                ingredient={ingredient}
+                ingredientUnitOptions={ingredientUnitOptions}
+                onChange={(field, value) =>
+                  handleIngredientChange(ingredient.id, field, value)
+                }
+                onDelete={() => setDeleteTarget(ingredient.id)}
               />
             ))}
           </div>
@@ -52,7 +93,16 @@ function RecipeInputPage() {
           <div
             className="r_m_m_bot"
             onClick={() =>
-              setIngredients((prev) => [...prev, Math.max(0, ...prev) + 1])
+              setIngredients((prev) => [
+                ...prev,
+                {
+                  id: Math.max(0, ...prev.map((item) => item.id)) + 1,
+                  name: "",
+                  quantity: "",
+                  unit: "",
+                  price: "",
+                },
+              ])
             }
           >
             <img src={plus_icon} alt="" />
@@ -92,7 +142,9 @@ function RecipeInputPage() {
         <DeleteModal
           onClose={() => setDeleteTarget(null)}
           onDelete={() => {
-            setIngredients((prev) => prev.filter((id) => id !== deleteTarget));
+            setIngredients((prev) =>
+              prev.filter((ingredient) => ingredient.id !== deleteTarget),
+            );
             setDeleteTarget(null);
           }}
         />
