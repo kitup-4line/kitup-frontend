@@ -2,7 +2,12 @@ import "./IngredientRowList.css";
 import del_icon from "@/images/Onboarding/del_icon.svg";
 import drop_icon from "@/images/Onboarding/drop_icon.svg";
 
-const IngredientRowList = ({ ingredient, onChange, onDelete }) => {
+const IngredientRowList = ({
+  ingredient,
+  onChange,
+  onDelete,
+  ingredientUnitOptions = [],
+}) => {
   return (
     <div className="IngredientRowList_wrap">
       <input
@@ -24,14 +29,11 @@ const IngredientRowList = ({ ingredient, onChange, onDelete }) => {
           onChange={(e) => onChange?.("unit", e.target.value)}
         >
           <option value="" disabled hidden></option>
-          <option value="g">g</option>
-          <option value="kg">kg</option>
-          <option value="ml">ml</option>
-          <option value="L">L</option>
-          <option value="개">개</option>
-          <option value="장">장</option>
-          <option value="봉">봉</option>
-          <option value="팩">팩</option>
+          {ingredientUnitOptions.map((unit) => (
+            <option key={unit.value} value={unit.value}>
+              {unit.label}
+            </option>
+          ))}
         </select>
         <img src={drop_icon} alt="" />
       </div>
