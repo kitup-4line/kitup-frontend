@@ -2,14 +2,16 @@
 
 신메뉴를 실제로 판매해 보기 전에 원가·판매 데이터로 검증하는 메뉴 테스트 도구
 
+**배포 링크:** https://kitup-eta.vercel.app/
+
 ## 주요 기능
 
 | 단계 | 설명 |
 | --- | --- |
-| 메뉴 등록 / 원가 계산 | 메뉴 정보와 레시피를 입력하면 AI가 재료를 추정하고 원가를 계산해 줍니다 |
-| 대시보드 | 주문 목록, 시간대별 판매, 채널별 비교 같은 운영 지표를 보여 줍니다 |
-| 리포트 | 수익 구조, 판매 패턴, 고객 반응을 분석하고 다음 실험을 제안합니다 |
-| 시뮬레이터 | 판매 조건을 바꿨을 때의 결과와 예상 리뷰를 보여 줍니다 |
+| 내 테스트 | 테스트 생성, 삭제 및 진행 상태별 관리 |
+| 메뉴 등록 | 메뉴 정보 입력, AI 기반 재료 추정 및 원가 계산 |
+| 운영 대시보드 | 주문 내역, 시간대별 판매, 채널별 수익 비교 및 원가 수정 |
+| 분석 리포트 | 수익 구조, 판매 패턴, 고객 반응 분석 및 개선 방안 제안 |
 
 ## 기술 스택
 
@@ -36,17 +38,11 @@ npm test
 
 ```
 src/
-├── app/        # 앱 진입점, 라우터, 프로바이더, 레이아웃, 라우트 가드
-├── pages/      # 라우트 단위 페이지 (onboarding / dashboard / report / simulator)
-├── features/   # 기능별 모듈. 각각 api/(React Query 훅), components/, hooks/
-│   ├── cost/
-│   ├── dashboard/
-│   ├── report/
-│   ├── simulator/
-│   └── test/
-├── domain/     # UI와 무관한 순수 로직 (calc/ 계산 함수, 모델, 상수)
-├── shared/     # 공용 UI 컴포넌트, API 클라이언트, 유틸
-└── mocks/      # MSW 핸들러와 목 데이터
+├── app/        # 앱 설정, 라우터, 레이아웃 및 라우트 가드
+├── pages/      # 메뉴 등록, 대시보드, 리포트 등 페이지
+├── features/   # 기능별 API, 컴포넌트 및 훅
+├── shared/     # 공통 UI 컴포넌트 및 유틸리티
+└── mocks/      # 개발 환경 API 모킹 및 목 데이터
 ```
 
 ## 라우트
@@ -54,13 +50,15 @@ src/
 | 경로 | 화면 |
 | --- | --- |
 | `/tests` | 테스트 목록 |
-| `/tests/new` | 새 테스트 (메뉴 등록) |
-| `/tests/:testId/onboarding/*` | 메뉴 → 레시피 → AI 재료 → 원가 결과 |
+| `/tests/new` | 새 테스트 생성 |
+| `/tests/:testId/onboarding/*` | 메뉴 등록 및 원가 산정 |
 | `/tests/:testId/dashboard/*` | 운영 / 주문 탭, 원가 수정 |
-| `/tests/:testId/precheck`, `/report` | 리포트 사전 점검, 리포트 |
-| `/tests/:testId/simulator` | 시뮬레이터 |
+| `/tests/:testId/precheck` | 리포트 사전 점검 |
+| `/tests/:testId/report` | 분석 리포트 |
 
 ## 브랜치 / 커밋 규칙
 
-- `develop` 브랜치를 기준으로 `feat/*`, `fix/*`, `chore/*` 브랜치를 만들어 작업합니다
+- `main`: 프로덕션 배포 브랜치
+- `develop`: 개발 및 기능 통합 브랜치
+- `develop`을 기준으로 `feat/*`, `fix/*`, `chore/*` 브랜치를 생성하여 작업합니다.
 - 커밋 메시지: `feat: ...`, `fix: ...`, `chore: ...` (Conventional Commits)
