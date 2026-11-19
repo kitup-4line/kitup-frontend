@@ -1,0 +1,8 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
+:root {
+  --mainfont: "Pretendard";
+  --text: #0f172a;
+  --selected: #f4faff;
+  --unselected: #e2e8f0;
+}

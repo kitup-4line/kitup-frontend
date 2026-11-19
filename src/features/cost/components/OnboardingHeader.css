@@ -1,0 +1,23 @@
+.OnboardingHeader_wrap {
+  width: 960px;
+  height: 80px;
+  border-bottom: 1px solid var(--unselected);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.OnboardingHeader_wrap p {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 140%;
+  letter-spacing: -2.4px;
+}
+
+.OnboardingHeader_wrap span {
+  font-size: 14px;
+  line-height: 140%;
+  color: #64748b;
+  letter-spacing: -2.4%;
+}

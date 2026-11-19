@@ -1,0 +1,65 @@
+.CostResultPage_wrap {
+  width: 100%;
+  min-height: calc(100dvh - 64px);
+  background-color: #f8fafc;
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px 120px 0 104px;
+}
+
+/* ============================================= */
+
+.costresultpage_main {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ============================================= */
+
+.costresultpage_bot {
+  display: flex;
+  margin-left: auto;
+  margin-top: 27px;
+  gap: 12px;
+}
+
+.costresultpage_bot_prev {
+  width: 118px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid var(--unselected);
+  background-color: #fcfeff;
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+  color: var(--text);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.costresultpage_bot_next {
+  width: 112px;
+  height: 40px;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: var(--text);
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+  color: #f8fafc;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}

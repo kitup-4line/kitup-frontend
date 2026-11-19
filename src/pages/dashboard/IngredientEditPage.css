@@ -1,0 +1,252 @@
+.IngredientEditPage_wrap {
+  width: 100%;
+  min-height: calc(100dvh - 64px);
+  background-color: #f8fafc;
+
+  display: flex;
+  flex-direction: column;
+  padding: 24px 120px 0 104px;
+
+  line-height: 140%;
+  letter-spacing: -2.4%;
+}
+
+/* ======================================================= */
+
+.ingredienteditpage_top h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.ingredienteditpage_top span {
+  display: block;
+  margin-top: 12px;
+
+  font-weight: 400;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ======================================================= */
+
+.ingredienteditpage_main {
+  width: 960px;
+  height: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #fcfeff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 24px;
+  padding: 24px;
+}
+
+.i_e_m_top {
+  width: 910px;
+  height: 49px;
+  border-bottom: 1px solid var(--unselected);
+
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 600;
+}
+
+.i_e_m_t_left span {
+  font-weight: 400;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.i_e_m_t_right {
+  width: 75px;
+  height: 24px;
+  background-color: var(--unselected);
+  border-radius: 6px;
+
+  font-weight: 700;
+  font-size: 12px;
+  color: #64748b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+/* ======================================================= */
+
+.i_e_m_m_top {
+  width: 910px;
+  height: 36px;
+  background-color: #f1f5f9;
+  border-radius: 6px;
+
+  display: grid;
+  grid-template-columns: 360px 138px 137px 137px 62px;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 14px 0 16px;
+  margin-top: 20px;
+  box-sizing: border-box;
+
+  font-weight: 600;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.i_e_m_m_top span {
+  color: #f43f5e;
+}
+
+.i_e_m_m_top p:last-child {
+  margin-left: 20px;
+}
+
+/* ======================================================= */
+
+.i_e_m_m_mid {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ======================================================= */
+
+.i_e_m_m_bot {
+  width: 910px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: var(--selected);
+  border: 1px solid var(--unselected);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 20px;
+  cursor: pointer;
+
+  font-weight: 600;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ======================================================= */
+
+.ingredienteditpage_summary {
+  width: 100%;
+  border: 1px solid var(--unselected);
+  border-radius: 8px;
+  background-color: #fcfeff;
+
+  margin-top: 24px;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.i_e_s_top {
+  height: 40px;
+  border-bottom: 1px solid #f1f5f9;
+
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.i_e_s_main {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.i_e_s_box {
+  min-width: 0;
+  min-height: 102px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.i_e_s_box p {
+  font-weight: 500;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.i_e_s_box div {
+  margin-top: 16px;
+
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.i_e_s_box div.highlight {
+  color: #2563eb;
+}
+
+.i_e_s_number_group {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.i_e_s_box div .i_e_s_number_group {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.i_e_s_box div .i_e_s_unit {
+  margin-left: 2px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* ======================================================= */
+
+.ingredienteditpage_bot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-bottom: 40px;
+}
+
+.ingredienteditpage_bot button {
+  height: 40px;
+  border-radius: 6px;
+  padding: 0 24px;
+
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ingredienteditpage_cancel {
+  border: 1px solid var(--unselected);
+  background-color: #fcfeff;
+  color: var(--text);
+}
+
+.ingredienteditpage_confirm {
+  border: 1px solid var(--text);
+  background-color: var(--text);
+  color: #fcfeff;
+}
+
+@media (max-width: 700px) {
+  .i_e_s_main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

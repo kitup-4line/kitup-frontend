@@ -1,0 +1,255 @@
+.OrdersTabPage_wrap {
+  width: 960px;
+  height: 534px;
+  border-radius: 8px;
+  background-color: #fcfeff;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  line-height: 140%;
+  letter-spacing: -2.4%;
+}
+
+/* ======================================================= */
+
+.orderstabpage_top {
+  width: 100%;
+  height: 72px;
+  padding: 0 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderstabpage_top h3 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.orderstabpage_top span {
+  font-weight: 500;
+  font-size: 12px;
+  color: #64748b;
+  display: flex;
+  gap: 4px;
+}
+
+/* ======================================================= */
+
+.orderstabpage_table_wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.orderstabpage_table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.orderstabpage_table th:nth-child(1) {
+  width: 156px;
+}
+
+.orderstabpage_table th:nth-child(2) {
+  width: 162px;
+}
+
+.orderstabpage_table th:nth-child(3) {
+  width: 218px;
+}
+
+.orderstabpage_table th:nth-child(4) {
+  width: 200px;
+}
+
+.orderstabpage_table thead {
+  height: 66px;
+  background-color: #f1f5f9;
+}
+
+.orderstabpage_table th {
+  padding: 0 28px;
+  text-align: left;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.orderstabpage_table tbody tr {
+  height: 66px;
+}
+
+.orderstabpage_table td {
+  padding: 0 28px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #64748b;
+}
+
+.orderstabpage_table td:first-child {
+  color: var(--text);
+}
+
+.orderstabpage_table th:last-child,
+.orderstabpage_table td:last-child {
+  text-align: center;
+}
+
+/* ======================================================= */
+
+.orders_type {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 32px;
+  border-radius: 4px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.orders_type.delivery {
+  border: 1px solid #2563eb;
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.orders_type.pickup {
+  border: 1px solid #fde68a;
+  background-color: #fffbeb;
+  color: #b45309;
+}
+
+/* ======================================================= */
+
+.orders_review {
+  width: 164px;
+  height: 44px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.orders_review_empty {
+  font-size: 14px;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+/* ======================================================= */
+
+.orderstabpage_bot {
+  width: 100%;
+  height: 66px;
+  padding: 12px 32px;
+  background-color: #f1f5f9;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.orderstabpage_bot p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.orders_pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.orders_pagination button {
+  min-width: 36px;
+  height: 42px;
+  padding: 0 17px;
+
+  border: 1px solid #64748b;
+  border-radius: 8px;
+  background-color: #fcfeff;
+
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.orders_pagination button.selected {
+  background-color: var(--text);
+  border-color: var(--text);
+  color: #fcfeff;
+}
+
+/* ======================================================= */
+
+.reviewmodal_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(15, 23, 42, 0.86);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviewmodal_box {
+  width: 420px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  background-color: #fcfeff;
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewmodal_title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+}
+
+.reviewmodal_content {
+  width: 370px;
+  min-height: 80px;
+  margin-top: 28px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #f8fafc;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+  color: #0f172a;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.reviewmodal_close {
+  width: 60px;
+  height: 36px;
+  margin-top: 17px;
+  margin-left: auto;
+
+  border-radius: 6px;
+  background-color: #0f172a;
+
+  color: #fcfeff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+}

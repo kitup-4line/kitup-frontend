@@ -1,0 +1,104 @@
+.IngredientAddForm_wrap {
+  width: 960px;
+  height: auto;
+  border: 1px solid var(--unselected);
+  border-radius: 12px;
+  background-color: #fcfeff;
+
+  line-height: 140%;
+  letter-spacing: -2.4%;
+
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+/* =============================================== */
+
+.ingredientaddform_top {
+  font-weight: 600;
+}
+
+.ingredientaddform_top span {
+  font-weight: 400;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* =============================================== */
+
+.ingredientaddform_main {
+  margin-top: 16px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.ingredientaddform_main span {
+  color: #f43f5e;
+}
+
+.i_m_add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.i_m_add input {
+  width: 796px;
+  height: 40px;
+  border: 1px solid var(--unselected);
+  border-radius: 8px;
+  padding: 0 13px;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+
+  outline: none;
+  background: none;
+}
+
+.i_m_add input::placeholder {
+  color: #94a3b8;
+}
+
+.i_m_add button {
+  width: 104px;
+  height: 40px;
+  background-color: var(--text);
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  color: #fcfeff;
+}
+
+/* =============================================== */
+
+.ingredientaddform_bot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.ingredientaddform_bot span {
+  color: #64748b;
+}
+
+.ingredientaddform_bot button {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: var(--unselected);
+
+  font-weight: 400;
+  color: #64748b;
+}

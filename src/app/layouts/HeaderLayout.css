@@ -1,0 +1,32 @@
+@import url("https://cdn.jsdelivr.net/gh/fonts-archive/GyeonggiTitle/GyeonggiTitle.css");
+
+.HeaderLayout_wrap {
+  width: 1440px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fcfeff;
+  padding: 0 120px 0 20px;
+}
+
+.HeaderLayout_wrap p {
+  font-family: "Gyeonggi Title";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.45px;
+}
+
+.header_icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #f4faff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

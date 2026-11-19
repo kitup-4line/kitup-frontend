@@ -1,0 +1,35 @@
+.AiIngredientList_wrap {
+  width: 960px;
+  height: auto;
+  border: 1px solid var(--unselected);
+  border-radius: 12px;
+  background-color: #fcfeff;
+
+  line-height: 140%;
+  letter-spacing: -2.4%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.aiingredientlist_top {
+  padding: 24px 0 24px 24px;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+}
+
+.aiingredientlist_top p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.24px;
+  color: #94a3b8;
+}
+
+.aiingredientlist_top span {
+  font-weight: 700;
+  color: #2563eb;
+}

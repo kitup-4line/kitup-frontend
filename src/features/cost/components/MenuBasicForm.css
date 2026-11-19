@@ -1,0 +1,264 @@
+.MenuBasicForm_wrap {
+  width: 960px;
+  height: 298px;
+  border: 1px solid var(--unselected);
+  border-radius: 8px;
+  background-color: #fcfeff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================================================ */
+
+.menubasicform_top {
+  width: 910px;
+  height: 52px;
+
+  margin-top: 24px;
+  border-bottom: 1px solid var(--unselected);
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+}
+
+.menubasicform_top span {
+  font-weight: 400;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ================================================ */
+
+.menubasicform_main {
+  width: 910px;
+  height: 176px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  line-height: 140%;
+  letter-spacing: -2.4%;
+}
+
+.m_m_top,
+.m_m_bot {
+  display: flex;
+  gap: 25px;
+}
+
+.m_m_bot {
+  margin-top: 22px;
+}
+
+.m_m_t_1 p,
+.m_m_t_2 p,
+.m_m_b_1 p,
+.m_m_b_2 p {
+  font-weight: 600;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.m_m_t_1 span,
+.m_m_t_2 span {
+  color: #f43f5e;
+}
+
+.m_m_t_1 input,
+.m_m_t_2_box,
+.m_m_b_1_box,
+.m_m_b_2_box {
+  width: 442px;
+  height: 48px;
+  border: 1px solid var(--unselected);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+  outline: none;
+  background: none;
+  padding: 0 16px;
+  font-size: 14px;
+
+  margin-top: 8px;
+}
+
+/* ================================================ */
+
+.m_m_t_2_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 11px 0 16px;
+  gap: 8px;
+}
+
+.m_m_t_2_box input {
+  outline: none;
+  background: none;
+  width: 340px;
+}
+
+.m_m_t_2_box p {
+  width: 66px;
+  height: 28px;
+  background-color: var(--unselected);
+  border: 1px solid var(--selected);
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================================================ */
+
+.m_m_b_1_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 11px 0 16px;
+  gap: 8px;
+}
+
+.m_m_b_1_box input {
+  outline: none;
+  background: none;
+  width: 340px;
+}
+
+.m_m_b_1_box p {
+  width: 66px;
+  height: 28px;
+  background-color: var(--unselected);
+  border: 1px solid var(--selected);
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================================================ */
+
+.m_m_b_2_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 17px 0 16px;
+  gap: 8px;
+}
+
+.m_m_b_2_box select {
+  background: none;
+  width: 384px;
+  cursor: pointer;
+}
+
+/* ================================================ */
+
+.MenuBasicForm_wrap input[type="number"]::-webkit-inner-spin-button,
+.MenuBasicForm_wrap input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.MenuBasicForm_wrap input[type="number"] {
+  appearance: textfield;
+}
+
+/* ================================================ */
+
+.m_m_b_2 {
+  position: relative;
+}
+
+.m_m_b_2_box .business-hours-trigger {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  background: none;
+  text-align: left;
+}
+
+.business-hours-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background-color: #fcfeff;
+}
+
+.business-hours-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.business-hours-column {
+  min-width: 0;
+}
+
+.business-hours-column > p {
+  margin-bottom: 11px;
+  color: #64748b;
+}
+
+.business-hours-options {
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.hours-option {
+  font-size: 14px;
+  color: #334155;
+
+  display: block;
+  width: 100%;
+  padding: 6.7px 12px;
+  border-radius: 6px;
+  text-align: left;
+}
+
+.hours-option.selected {
+  background-color: #f1f5f9;
+  font-weight: 700;
+}
+
+.business-hours-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.business-hours-actions button {
+  padding: 7px 15px;
+  border-radius: 6px;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.m_m_t_1 {
+  position: relative;
+}
+
+.m_m_t_1 input.input-error,
+.m_m_t_2_box.input-error,
+.m_m_b_2_box.input-error {
+  border-color: red;
+}
+
+.m_m_t_1 .menubasicform_error {
+  position: absolute;
+  font-size: 11px;
+  font-weight: 400;
+  color: red;
+}

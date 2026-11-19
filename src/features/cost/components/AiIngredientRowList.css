@@ -1,0 +1,56 @@
+.AiIngredientRowList_wrap {
+  width: 958px;
+  height: 71px;
+  border-top: 1px solid var(--unselected);
+
+  line-height: 140%;
+  letter-spacing: -2.4%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+
+/* ============================================= */
+
+.aiingredientrowlist_left {
+  font-weight: 600;
+  font-size: 14px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.aiingredientrowlist_txt {
+  color: var(--text);
+}
+
+.aiingredientrowlist_txt p {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.aiingredientrowlist_txt span {
+  color: #94a3b8;
+}
+
+/* ============================================= */
+
+.aiingredientrowlist_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  width: 66px;
+  height: 32px;
+  border: 1px solid var(--unselected);
+  border-radius: 8px;
+  cursor: pointer;
+
+  font-weight: 500;
+  font-size: 12px;
+  color: #64748b;
+}

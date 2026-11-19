@@ -1,0 +1,230 @@
+.DashboardLayout_wrap {
+  width: 100%;
+  min-height: calc(100dvh - 64px);
+  background-color: #f8fafc;
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px 120px 40px 104px;
+
+  line-height: 140%;
+  letter-spacing: -2.4%;
+}
+
+/* =========================================================== */
+
+.dashboardlayout_top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.d_t_title {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.d_t_title span {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.d_t_title_txt {
+  display: flex;
+  gap: 20px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* =========================================================== */
+
+.dashboardlayout_buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.dashboardlayout_buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  height: 36px;
+  padding: 0 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #fcfeff;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.dashboardlayout_buttons .d_l_load {
+  background-color: var(--text);
+  border: none;
+  color: #fcfeff;
+}
+
+/* =========================================================== */
+
+.dashboardlayout_main {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* =========================================================== */
+
+.dashboardlayout_finish {
+  width: 100%;
+  min-height: 81px;
+  margin-top: 24px;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #fcfeff;
+  box-shadow:
+    0 2px 6px -1px rgba(15, 23, 42, 0.03),
+    0 4px 16px -2px rgba(15, 23, 42, 0.06);
+  border-radius: 12px;
+}
+
+.dashboardlayout_finish_text p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dashboardlayout_finish_text span {
+  font-size: 12px;
+  font-weight: 400;
+  color: #64748b;
+}
+
+.dashboardlayout_finish button {
+  width: 116px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: var(--text);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+  font-size: 12px;
+  font-weight: 500;
+  color: #fcfeff;
+}
+
+/* =========================================================== */
+
+.importmodal_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(15, 23, 42, 0.86);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.importmodal_box {
+  width: 420px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  background-color: #fcfeff;
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.importmodal_title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+}
+
+.importmodal_description {
+  margin-top: 16px;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+  color: #64748b;
+}
+
+.importmodal_info {
+  width: 370px;
+  min-height: 80px;
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 6px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+}
+
+.importmodal_info > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.importmodal_notice {
+  margin-top: 16px;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+  color: #64748b;
+}
+
+.importmodal_buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.importmodal_buttons button {
+  height: 36px;
+  padding: 8px 16px;
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+}
+
+.importmodal_cancel {
+  width: 60px;
+  border: 1px solid #0f172a;
+  background-color: #fcfeff;
+}
+
+.importmodal_confirm {
+  width: 80px;
+  background-color: #0f172a;
+  color: #fcfeff;
+}

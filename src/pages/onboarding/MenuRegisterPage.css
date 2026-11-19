@@ -1,0 +1,39 @@
+.MenuRegister_wrap {
+  width: 100%;
+  min-height: calc(100dvh - 64px);
+  background-color: #f8fafc;
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px 120px 0 104px;
+}
+
+.menuregister_main {
+  margin-top: 24px;
+}
+
+.menuregister_main_02 {
+  margin-top: 24px;
+}
+
+.menuregister_bot {
+  width: 168px;
+  height: 40px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: var(--text);
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: -2.4%;
+  color: #f8fafc;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-left: auto;
+  margin-top: 27px;
+}
