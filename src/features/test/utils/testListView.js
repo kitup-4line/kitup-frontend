@@ -1,6 +1,6 @@
 import { TEST_FILTER, TEST_STATUS } from "@/domain/testStatus";
 
-export const PAGE_SIZE = 5;
+const PAGE_SIZE = 5;
 
 // 삭제 API는 작성 중(DRAFT) 테스트만 허용한다 (그 외 상태는 409 not_draft)
 export const isDeletable = (status) => status === TEST_STATUS.DRAFT;
